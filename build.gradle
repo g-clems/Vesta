@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'application'
+    id("com.diffplug.spotless").version("6.12.0")
+    id("com.github.johnrengelman.shadow").version("7.1.0")
+    id("io.freefair.lombok").version("6.5.0.3")
+}
+
+// General
+group = "com.vesta"
+mainClassName = "com.augery.vesta.Main"
+version = "2.0"
+sourceCompatibility = targetCompatibility = "17"
+compileJava.options.encoding = "UTF-8"
+
+// Dependencies
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JDA
+    implementation("net.dv8tion:JDA:5.0.0-beta.2")
+
+    // Spring Context
+    implementation("org.springframework:spring-context:6.0.3")
+
+    // Spring Data JPA + Hibernate
+    implementation("org.postgresql:postgresql:42.5.1")
+    implementation("org.springframework.data:spring-data-jpa:3.0.0")
+    implementation("org.hibernate:hibernate-core:6.1.6.Final")
+
+    implementation("org.apache.commons:commons-dbcp2:2.9.0")
+
+    // Jackson
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.14.1")
+
+    // Logback
+    implementation("ch.qos.logback:logback-classic:1.4.5")
+}
+
